@@ -33,8 +33,8 @@ class Post {
 
 // Dữ liệu mẫu ban đầu
 final List<Post> mockPosts = [
-  Post(id: 1, title: 'Hướng dẫn Flutter BLoC', content: 'Nội dung chi tiết...', author: 'John', category: 'Technology', image: 'https://via.placeholder.com/400', createdAt: '2024-01-01'),
-  Post(id: 2, title: 'UI/UX cơ bản', content: 'Thiết kế đẹp...', author: 'Alice', category: 'Design', image: 'https://via.placeholder.com/400', createdAt: '2024-01-02'),
+  Post(id: 1, title: 'Hướng dẫn Flutter BLoC', content: 'Nội dung chi tiết...', author: 'John', category: 'Technology', image: 'https://cms.junglebosstours.com/assets/0a767e37-3aa6-45e5-9222-6caeb8983e45?format=webp', createdAt: '2024-01-01'),
+  Post(id: 2, title: 'UI/UX cơ bản', content: 'Thiết kế đẹp...', author: 'Alice', category: 'Design', image: 'https://cms.junglebosstours.com/assets/0a767e37-3aa6-45e5-9222-6caeb8983e45?format=webp', createdAt: '2024-01-02'),
 ];
 class Comment {
   final String id;

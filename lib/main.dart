@@ -19,7 +19,7 @@ void main() {
 }
 
 class MyBlogPlatform extends StatelessWidget {
-  const MyBlogPlatform({Key? key}) : super(key: key);
+  const MyBlogPlatform({super.key});
 
   @override
   Widget build(BuildContext context) {

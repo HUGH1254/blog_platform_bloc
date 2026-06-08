@@ -10,7 +10,7 @@ import '../bloc/auth/auth_state.dart';
 
 class CreateEditPostScreen extends StatefulWidget {
   final Post? editPost;
-  const CreateEditPostScreen({Key? key, this.editPost}) : super(key: key);
+  const CreateEditPostScreen({super.key, this.editPost});
 
   @override
   State<CreateEditPostScreen> createState() => _CreateEditPostScreenState();
@@ -47,7 +47,7 @@ class _CreateEditPostScreenState extends State<CreateEditPostScreen> {
         content: _contentCtrl.text,
         author: authState.currentUser.name, // Lấy tên User đang đăng nhập
         category: _category,
-        image: _imageFile?.path ?? widget.editPost?.image ?? 'https://via.placeholder.com/400',
+        image: _imageFile?.path ?? widget.editPost?.image ?? 'https://via.place holder.com/400',
         createdAt: widget.editPost?.createdAt ?? DateTime.now().toString(),
       );
 
@@ -70,8 +70,11 @@ class _CreateEditPostScreenState extends State<CreateEditPostScreen> {
               child: Container(
                 height: 200, color: Colors.grey[300],
                 child: _imageFile != null ? Image.file(_imageFile!, fit: BoxFit.cover) 
-                     : (widget.editPost?.image != null ? Image.network(widget.editPost!.image, fit: BoxFit.cover)
-                     : const Center(child: Icon(Icons.add_a_photo, size: 50))),
+                     : (widget.editPost?.image != null && widget.editPost!.image.isNotEmpty
+                        ? (widget.editPost!.image.startsWith('http') 
+                            ? Image.network(widget.editPost!.image, fit: BoxFit.cover)
+                            : Image.file(File(widget.editPost!.image), fit: BoxFit.cover))
+                        : const Center(child: Icon(Icons.add_a_photo, size: 50))),
               ),
             ),
             const SizedBox(height: 16),
@@ -81,7 +84,7 @@ class _CreateEditPostScreenState extends State<CreateEditPostScreen> {
               validator: (val) => val!.isEmpty ? 'Vui lòng nhập tiêu đề' : null,
             ),
             DropdownButtonFormField<String>(
-              value: _category,
+              initialValue: _category,
               items: ['Technology', 'Design'].map((c) => DropdownMenuItem(value: c, child: Text(c))).toList(),
               onChanged: (val) => setState(() => _category = val!),
             ),

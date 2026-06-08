@@ -7,7 +7,7 @@ import '../widgets/post_card_widget.dart';
 import 'create_edit_post_screen.dart';
 
 class BlogHomeScreen extends StatefulWidget {
-  const BlogHomeScreen({Key? key}) : super(key: key);
+  const BlogHomeScreen({super.key});
   @override
   State<BlogHomeScreen> createState() => _BlogHomeScreenState();
 }

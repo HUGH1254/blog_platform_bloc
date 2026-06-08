@@ -11,7 +11,7 @@ import '../widgets/comment_item_widget.dart';
 
 class PostDetailScreen extends StatelessWidget {
   final Post post;
-  const PostDetailScreen({Key? key, required this.post}) : super(key: key);
+  const PostDetailScreen({super.key, required this.post});
 
   @override
   Widget build(BuildContext context) {

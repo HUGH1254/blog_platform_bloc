@@ -9,7 +9,7 @@ import '../bloc/comment/comment_state.dart';
 
 class CommentSectionWidget extends StatefulWidget {
   final int postId;
-  const CommentSectionWidget({Key? key, required this.postId}) : super(key: key);
+  const CommentSectionWidget({super.key, required this.postId});
 
   @override
   State<CommentSectionWidget> createState() => _CommentSectionWidgetState();
@@ -140,7 +140,7 @@ class _CommentSectionWidgetState extends State<CommentSectionWidget> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircleAvatar(child: Text(comment.author[0]), radius: 16),
+          CircleAvatar(radius: 16, child: Text(comment.author[0])),
           const SizedBox(width: 8),
           Expanded(
             child: Column(

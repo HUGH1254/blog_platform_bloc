@@ -5,7 +5,7 @@ import '../screens/post_detail_screen.dart';
 
 class PostCardWidget extends StatelessWidget {
   final Post post;
-  const PostCardWidget({Key? key, required this.post}) : super(key: key);
+  const PostCardWidget({super.key, required this.post});
 
   Widget _buildImage() {
     if (post.image.isEmpty) return const Icon(Icons.image_not_supported, size: 50);

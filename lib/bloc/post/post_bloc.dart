@@ -4,7 +4,7 @@ import 'post_state.dart';
 import '../../models/blog_models.dart';
 
 class PostBloc extends Bloc<PostEvent, PostState> {
-  List<Post> _database = List.from(mockPosts);
+  final List<Post> _database = List.from(mockPosts);
 
   PostBloc() : super(PostLoading()) {
     on<FetchPosts>((event, emit) async {
